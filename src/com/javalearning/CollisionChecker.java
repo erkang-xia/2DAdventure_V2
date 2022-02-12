@@ -26,8 +26,8 @@ public class CollisionChecker {
             case "up" -> {
                 //Making a prediction with the spped and direction
                 entityTopRow = (entityTopWorldY - entity.speed) / gp.tileSize;
-                tileNum1 = gp.tileM.mapTileNum[entityLeftCol][entityTopRow];
-                tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityTopRow];
+                tileNum1 = gp.tileM.mapTileNum_Ground[entityLeftCol][entityTopRow];
+                tileNum2 = gp.tileM.mapTileNum_Ground[entityRightCol][entityTopRow];
                 //check if tile.collision is true
                 if (gp.tileM.tile[tileNum1].collision || gp.tileM.tile[tileNum2].collision) {
                     entity.collisionIsOn = true;
@@ -35,8 +35,8 @@ public class CollisionChecker {
             }
             case "down" -> {
                 entityBottomRow = (entityTopWorldY + entity.speed * 6) / gp.tileSize;
-                tileNum1 = gp.tileM.mapTileNum[entityLeftCol][entityBottomRow];
-                tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityBottomRow];
+                tileNum1 = gp.tileM.mapTileNum_Ground[entityLeftCol][entityBottomRow];
+                tileNum2 = gp.tileM.mapTileNum_Ground[entityRightCol][entityBottomRow];
                 //check if tile.collision is true
                 if (gp.tileM.tile[tileNum1].collision || gp.tileM.tile[tileNum2].collision) {
                     entity.collisionIsOn = true;
@@ -44,8 +44,8 @@ public class CollisionChecker {
             }
             case "left" -> {
                 entityLeftCol = (entityLeftWorldX - entity.speed) / gp.tileSize;
-                tileNum1 = gp.tileM.mapTileNum[entityLeftCol][entityTopRow];
-                tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityBottomRow];
+                tileNum1 = gp.tileM.mapTileNum_Ground[entityLeftCol][entityTopRow];
+                tileNum2 = gp.tileM.mapTileNum_Ground[entityRightCol][entityBottomRow];
                 //check if tile.collision is true
                 if (gp.tileM.tile[tileNum1].collision || gp.tileM.tile[tileNum2].collision) {
                     entity.collisionIsOn = true;
@@ -53,8 +53,8 @@ public class CollisionChecker {
             }
             case "right" -> {
                 entityRightCol = (entityRightWorldX + entity.speed) / gp.tileSize;
-                tileNum1 = gp.tileM.mapTileNum[entityLeftCol][entityTopRow];
-                tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityBottomRow];
+                tileNum1 = gp.tileM.mapTileNum_Ground[entityLeftCol][entityTopRow];
+                tileNum2 = gp.tileM.mapTileNum_Ground[entityRightCol][entityBottomRow];
                 //check if tile.collision is true
                 if (gp.tileM.tile[tileNum1].collision || gp.tileM.tile[tileNum2].collision) {
                     entity.collisionIsOn = true;

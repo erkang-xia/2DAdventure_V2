@@ -137,7 +137,7 @@ public class GamePanel extends JPanel implements Runnable{
 
         //DRAW
         //Tile
-        tileM.draw(g2);//here tile comes first because it works as layer, tile is the background
+        tileM.draw(g2,true);//here tile comes first because it works as layer, tile is the background
         //Object
         for (int i = 0; i < obj.length; i++){
             if(obj[i] != null){
@@ -154,6 +154,8 @@ public class GamePanel extends JPanel implements Runnable{
         //Player
         player.draw(g2);
         ui.draw(g2);
+
+        //tileM.draw(g2,false);
 
 
         g2.dispose(); // dispose context and release memory

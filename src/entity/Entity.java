@@ -88,7 +88,7 @@ public class Entity {
 
         try{
             scaledImage = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream( imagePath + ".png")));
-            scaledImage = uTool.scaledImage(scaledImage, gp.tileSize, gp.tileSize);
+            //scaledImage = uTool.scaledImage(scaledImage, gp.tileSize, gp.tileSize);
 
         }
         catch(IOException e){
@@ -144,7 +144,7 @@ public class Entity {
                 }
             }
 
-            g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+            g2.drawImage(image, screenX, screenY,null);
         }
     }
 }
