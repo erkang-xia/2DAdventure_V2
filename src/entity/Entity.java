@@ -32,7 +32,7 @@ public class Entity {
 
     public Entity(GamePanel gp) {
         this.gp = gp;
-        this.uTool = new UtilityTool();
+        //this.uTool = new UtilityTool();
     }
 
     public void setAction(){}

@@ -9,6 +9,9 @@ public class NPC_OldMan extends Entity{
     public NPC_OldMan(GamePanel gp) {
         super(gp);
 
+        worldX = gp.tileSize*23;
+        worldY = gp.tileSize*30;
+
         direction = "down";
         speed = 1;
         getNPCImage();
@@ -64,5 +67,7 @@ public class NPC_OldMan extends Entity{
 
 
     }
+
+
 
 }
