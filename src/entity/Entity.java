@@ -1,7 +1,6 @@
 package entity;
 
 import com.javalearning.GamePanel;
-import com.javalearning.UtilityTool;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -11,12 +10,11 @@ import java.util.Objects;
 
 public class Entity {
     GamePanel gp;
-    UtilityTool uTool;
     public int worldX, worldY;
     public int speed;
 
     // an image with an accessible buffer of image data, we use this to store our image files
-    public BufferedImage up1, up2, down1, down2, left1, left2, right1, right2;
+    public BufferedImage up1, up2, down1, down2, left1, left2, right1, right2, still;
     public String direction;
 
     public int spriteCounter = 0;
@@ -65,6 +63,8 @@ public class Entity {
                 case "down" -> worldY = worldY + speed;
                 case "left" -> worldX = worldX - speed;
                 case "right" -> worldX = worldX + speed;
+                case "still" -> {
+                }
             }
         }
 
@@ -100,9 +100,19 @@ public class Entity {
 
     public void draw(Graphics2D g2) {
         BufferedImage image = null;
-
         int screenX = worldX - gp.player.worldX + gp.player.screenX;
         int screenY = worldY - gp.player.worldY + gp.player.screenY;
+
+        if (gp.player.screenX > gp.player.worldX){
+            screenX = worldX;
+        }
+        if(gp.player.screenY > gp.player.worldY ){
+            screenY = worldY;
+        }
+
+
+
+
 
         if (worldX + gp.tileSize > gp.player.worldX - gp.player.screenX &&
                 worldX - gp.tileSize < gp.player.worldX + gp.player.screenX &&
@@ -141,6 +151,10 @@ public class Entity {
                     if (spriteNum == 2) {
                         image = right2;
                     }
+                }
+
+                case "still" -> {
+                    image = still;
                 }
             }
 

@@ -174,6 +174,13 @@ public class TileManager {
                 worldY - gp.tileSize < gp.player.worldY + gp.player.screenY){
                 //the forth and fifth ones determine the tile size
                 g2.drawImage(tile[tileNum].image, screenX, screenY, null);
+                //for test
+                g2.setColor(Color.white);
+                g2.drawRect(screenX,screenY,48,48);
+                int tilex = worldX/gp.tileSize;
+                int tiley = worldY/gp.tileSize;
+                g2.drawString((String.valueOf(tilex)),screenX,screenY + 15);
+                g2.drawString((String.valueOf(tiley)),screenX + 20,screenY + 15);
             }
             else if (gp.player.screenX > gp.player.worldX ||
                      gp.player.screenY > gp.player.worldY ||

@@ -15,6 +15,7 @@ public class Player extends Entity{
     public final int screenY;
 
 
+
     public Player(GamePanel gp, KeyHandler keyH) {
 
         super(gp);
@@ -24,8 +25,8 @@ public class Player extends Entity{
         screenY = gp.screenHeight/2 - gp.tileSize/2;
 
         solidArea = new Rectangle();
-        solidArea.x = 8;
-        solidArea.y = 16;
+        solidArea.x = 16;
+        solidArea.y = 32;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
 
@@ -45,14 +46,14 @@ public class Player extends Entity{
 
 
     public void getPlayerImage(){
-            up1 = setup("/player/boy_up_1");
-            up2 = setup("/player/boy_up_2");
-            down1 = setup("/player/boy_down_1");
-            down2 = setup("/player/boy_down_2");
-            left1 = setup("/player/boy_left_1");
-            left2 = setup("/player/boy_left_2");
-            right1 = setup("/player/boy_right_1");
-            right2 = setup("/player/boy_right_2");
+            up1 = setup("/player/red_up_1");
+            up2 = setup("/player/red_up_2");
+            down1 = setup("/player/red_down_1");
+            down2 = setup("/player/red_down_2");
+            left1 = setup("/player/red_left_1");
+            left2 = setup("/player/red_left_2");
+            right1 = setup("/player/red_right_1");
+            right2 = setup("/player/red_right_2");
     }
 
     @Override
@@ -189,6 +190,8 @@ public class Player extends Entity{
 
 
         g2.drawImage(image, x, y, null);
+        g2.setColor(Color.red);
+        g2.drawRect(x + solidArea.x,y + solidArea.y,solidArea.width,solidArea.height);
 
     }
 }
